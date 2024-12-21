@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     private PlayerInput playerInput; // Reference to PlayerInput, the main class that handles player input.
-    private PlayerInput.OnFootActions onFoot; // Reference to the "OnFoot" action map, which contains the player's movement and actions.
+    public PlayerInput.OnFootActions onFoot; // Reference to the "OnFoot" action map, which contains the player's movement and actions.
     private PlayerMotor motor; // Reference to the PlayerMotor script that handles movement.
     private PlayerLook look; // Reference to the PlayerLook script that handles camera control (looking around).
 

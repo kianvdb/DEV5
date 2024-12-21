@@ -42,3 +42,7 @@ This document tracks the progress made in the development of the first person sh
    - **Vector2 Input for Movement:** We use `Vector2` for movement since it makes it easy to handle directional inputs, such as from the arrow keys or left stick on a gamepad.
    - **CharacterController for Movement:** Using `CharacterController` simplifies movement and gravity handling, which reduces the need for custom physics code.
 
+### 7. **Why We Use extra folders in Scripts folder**
+ - **Structure and maintainability**  Created a new folder named 'Interactables' within the 'Scripts' directory to better organize the interactable objects. 
+Moved the 'Keypad.cs' script and future interactable objects will inherit from the 'Interactable' base class.
+This improves project structure and maintainability. The same reason there is a folder named 'Player' for all the player scripts.
