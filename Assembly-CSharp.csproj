@@ -71,6 +71,7 @@
     <Compile Include="Assets\Input\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\InteractionEvent.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />
+    <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInteract.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
