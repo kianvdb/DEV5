@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.iOS;
 
@@ -29,6 +30,14 @@ public int WeaponDamage;
 
 public GameObject muzzleEffect;
 private Animator animator;
+
+// Loading
+public float reloadTime;
+public int magazineSize, bulletsLeft;
+public bool isReloading;
+
+//UI 
+public TextMeshProUGUI ammoDisplay;
    public enum ShootingMode
    {
     Single,
@@ -43,12 +52,20 @@ readyToShoot = true;
 burstBulletsLeft = bulletsPerBurst;
 animator = GetComponent<Animator>();
 
+bulletsLeft = magazineSize;
 }
 
 
     // Update is called once per frame
     void Update()
     {
+if (bulletsLeft ==0 && isShooting)
+{
+    SoundManager.Instance.emptymagazineSoundPistol.Play();
+}
+
+
+    
  if (currentShootingMode == ShootingMode.Auto)
  {
  // Holding down left mouse button
@@ -62,19 +79,38 @@ isShooting = Input.GetKeyDown(KeyCode.Mouse0);
 
 
  }
- if (readyToShoot && isShooting)
+
+ // Reload system
+if (Input.GetKeyDown(KeyCode.R) &&bulletsLeft < magazineSize && isReloading == false )
+{
+Reload();
+}
+
+// Reload automatically when magazine is empty
+if (readyToShoot && isShooting == false && isReloading == false && bulletsLeft <= 0)
+{
+// Reload();
+}
+
+
+ if (readyToShoot && isShooting && bulletsLeft > 0)
  {
 burstBulletsLeft = bulletsPerBurst;
 FireWeapon();
 
  }
 
-
+ if (AmmoManager.Instance.ammoDisplay != null)
+ {
+   AmmoManager.Instance.ammoDisplay.text = $"{bulletsLeft/bulletsPerBurst}/{magazineSize/bulletsPerBurst}";
+ }
 
  }
     
 
 private void FireWeapon(){
+
+    bulletsLeft--;
 
     muzzleEffect.GetComponent<ParticleSystem>().Play();
     animator.SetTrigger("RECOIL");
@@ -114,6 +150,23 @@ Invoke ("FireWeapon", shootingDelay);
 }
 
 }
+
+
+private void Reload()
+{
+        SoundManager.Instance.reloadingSoundPistol.Play();
+
+isReloading = true;
+Invoke("ReloadCompleted", reloadTime);
+
+}
+private void ReloadCompleted()
+{
+bulletsLeft = magazineSize;
+isReloading = false;
+
+}
+
 private void ResetShot()
 {
 readyToShoot = true;
