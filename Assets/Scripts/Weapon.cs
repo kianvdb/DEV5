@@ -27,6 +27,8 @@ public int WeaponDamage;
    public float bulletVelocity = 30;
    public float bulletPrefabLifeTime = 3f;
 
+public GameObject muzzleEffect;
+private Animator animator;
    public enum ShootingMode
    {
     Single,
@@ -39,6 +41,7 @@ private void Awake()
 {
 readyToShoot = true;
 burstBulletsLeft = bulletsPerBurst;
+animator = GetComponent<Animator>();
 
 }
 
@@ -72,6 +75,12 @@ FireWeapon();
     
 
 private void FireWeapon(){
+
+    muzzleEffect.GetComponent<ParticleSystem>().Play();
+    animator.SetTrigger("RECOIL");
+
+SoundManager.Instance.shootingSoundPistol.Play();
+
     readyToShoot = false;
     Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
 
