@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.iOS;
 
 public class Weapon : MonoBehaviour
 {
-
+public bool isActiveWeapon;
 public int WeaponDamage;
 
 
@@ -26,16 +26,25 @@ public int WeaponDamage;
    public GameObject bulletPrefab;
    public Transform bulletSpawn;
    public float bulletVelocity = 30;
-   public float bulletPrefabLifeTime = 3f;
+   public float bulletPrefabLifeTime = 3f; //SAeconds
 
 public GameObject muzzleEffect;
-private Animator animator;
+internal Animator animator;
 
 // Loading
 public float reloadTime;
 public int magazineSize, bulletsLeft;
 public bool isReloading;
+public Vector3 spawnPosition;
+public Vector3 spawnRotation;
 
+public enum WeaponModel
+{
+Pistol,
+Rifle
+
+}
+public WeaponModel thisWeaponModel;
 //UI 
 public TextMeshProUGUI ammoDisplay;
    public enum ShootingMode
@@ -59,9 +68,15 @@ bulletsLeft = magazineSize;
     // Update is called once per frame
     void Update()
     {
+
+        GetComponent<Outline>().enabled = false;
+
+    if(isActiveWeapon)
+    {
+        // Empty magazine sound
 if (bulletsLeft ==0 && isShooting)
 {
-    SoundManager.Instance.emptymagazineSoundPistol.Play();
+    SoundManager.Instance.emptyMagazineSoundPistol.Play();
 }
 
 
@@ -105,7 +120,7 @@ FireWeapon();
    AmmoManager.Instance.ammoDisplay.text = $"{bulletsLeft/bulletsPerBurst}/{magazineSize/bulletsPerBurst}";
  }
 
- }
+ }}
     
 
 private void FireWeapon(){
@@ -115,8 +130,8 @@ private void FireWeapon(){
     muzzleEffect.GetComponent<ParticleSystem>().Play();
     animator.SetTrigger("RECOIL");
 
-SoundManager.Instance.shootingSoundPistol.Play();
 
+SoundManager.Instance.PlayShootingSound(thisWeaponModel);
     readyToShoot = false;
     Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
 
@@ -154,7 +169,9 @@ Invoke ("FireWeapon", shootingDelay);
 
 private void Reload()
 {
-        SoundManager.Instance.reloadingSoundPistol.Play();
+        
+        SoundManager.Instance.PlayReloadSound(thisWeaponModel);
+        animator.SetTrigger("RELOAD");
 
 isReloading = true;
 Invoke("ReloadCompleted", reloadTime);
