@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,6 +10,11 @@ public static WeaponManager Instance { get; set;}
 public List<GameObject>weaponSlots;
 
 public GameObject activeWeaponSlot;
+
+[Header("Ammo")]
+public int totalRifleAmmo = 0;
+public int totalPistolAmmo = 0;
+
 private void Awake()
 {
 if( Instance != null && Instance != this)
@@ -77,6 +83,19 @@ pickedupWeapon.transform.localRotation = Quaternion.Euler(weapon.spawnRotation.x
 weapon.isActiveWeapon = true;
 weapon.animator.enabled = true;
 }
+internal void PickupAmmo(AmmoBox ammo)
+{
+    switch (ammo.ammoType)
+    {
+        case AmmoType.PistolAmmo:
+            totalPistolAmmo += ammo.ammoAmount;
+            break;
+        case AmmoType.RifleAmmo:
+            totalRifleAmmo += ammo.ammoAmount;
+            break;
+    }
+}
+
 
 private void DropCurrentWeapon(GameObject pickedupWeapon)
 {
@@ -107,4 +126,33 @@ public void SwitchActiveSlot(int slotNumber)
         newWeapon.isActiveWeapon = true;
     }
 }
+
+
+internal void DecreaseTotalAmmo(int bulletsToDecrease, Weapon.WeaponModel thisWeaponModel)
+{
+    switch (thisWeaponModel)
+    {
+        case Weapon.WeaponModel.Pistol:
+        totalPistolAmmo -= bulletsToDecrease;
+        break;
+        case Weapon.WeaponModel.Rifle:
+        totalRifleAmmo -= bulletsToDecrease;
+        break;
+    }
+}
+
+    public int CheckAmmoLeftFor(Weapon.WeaponModel thisWeaponModel)
+    {
+        switch (thisWeaponModel)
+        {
+            case Weapon.WeaponModel.Rifle:
+            return totalPistolAmmo;
+
+            case Weapon.WeaponModel.Pistol:
+            return totalPistolAmmo;
+            default:
+            return 0;
+        }
+    }
+
 }

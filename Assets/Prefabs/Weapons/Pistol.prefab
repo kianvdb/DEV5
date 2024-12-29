@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 807744727465913206}
   - component: {fileID: 7261693690540417517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a668ba8afc50c042a014439e8de8f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActiveWeapon: 0
   WeaponDamage: 0
   isShooting: 0
   readyToShoot: 0
@@ -79,7 +80,7 @@ GameObject:
   - component: {fileID: 3391487489936147446}
   - component: {fileID: 2638647599170273508}
   - component: {fileID: 5412289635213866713}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +163,7 @@ GameObject:
   - component: {fileID: 3327846982270623120}
   - component: {fileID: 4173447259915189666}
   - component: {fileID: 1259918148787886915}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Magazin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +246,7 @@ GameObject:
   - component: {fileID: 5219590646978231189}
   - component: {fileID: 8391792769346508437}
   - component: {fileID: 5835868864888502345}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3035657648558228785}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2423384579761168063}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CINEMA_4D_Editor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +391,7 @@ GameObject:
   - component: {fileID: 4770757041838404230}
   - component: {fileID: 8835228230489997769}
   - component: {fileID: 5805161707269351366}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +474,7 @@ GameObject:
   - component: {fileID: 8009429528823740869}
   - component: {fileID: 6322732117535562313}
   - component: {fileID: 5005037889102651403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: M1911
   m_TagString: Untagged
   m_Icon: {fileID: 0}

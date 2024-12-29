@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -26,7 +27,7 @@ public int WeaponDamage;
    public GameObject bulletPrefab;
    public Transform bulletSpawn;
    public float bulletVelocity = 30;
-   public float bulletPrefabLifeTime = 3f; //SAeconds
+   public float bulletPrefabLifeTime = 3f; //Seconds
 
 public GameObject muzzleEffect;
 internal Animator animator;
@@ -68,11 +69,12 @@ bulletsLeft = magazineSize;
     // Update is called once per frame
     void Update()
     {
-
+  if(isActiveWeapon)
+  {
         GetComponent<Outline>().enabled = false;
 
-    if(isActiveWeapon)
-    {
+  
+    
         // Empty magazine sound
 if (bulletsLeft ==0 && isShooting)
 {
@@ -96,7 +98,7 @@ isShooting = Input.GetKeyDown(KeyCode.Mouse0);
  }
 
  // Reload system
-if (Input.GetKeyDown(KeyCode.R) &&bulletsLeft < magazineSize && isReloading == false )
+if (Input.GetKeyDown(KeyCode.R) &&bulletsLeft < magazineSize && isReloading == false && WeaponManager.Instance.CheckAmmoLeftFor(thisWeaponModel) > 0 )
 {
 Reload();
 }
@@ -115,13 +117,8 @@ FireWeapon();
 
  }
 
- if (AmmoManager.Instance.ammoDisplay != null)
- {
-   AmmoManager.Instance.ammoDisplay.text = $"{bulletsLeft/bulletsPerBurst}/{magazineSize/bulletsPerBurst}";
- }
 
  }}
-    
 
 private void FireWeapon(){
 
@@ -179,10 +176,17 @@ Invoke("ReloadCompleted", reloadTime);
 }
 private void ReloadCompleted()
 {
-bulletsLeft = magazineSize;
-isReloading = false;
+    int bulletsNeeded = magazineSize - bulletsLeft;
+    int availableAmmo = WeaponManager.Instance.CheckAmmoLeftFor(thisWeaponModel);
+    int bulletsToReload = Math.Min(bulletsNeeded, availableAmmo);
 
+    bulletsLeft += bulletsToReload;
+
+    WeaponManager.Instance.DecreaseTotalAmmo(bulletsToReload, thisWeaponModel);
+
+    isReloading = false;
 }
+
 
 private void ResetShot()
 {

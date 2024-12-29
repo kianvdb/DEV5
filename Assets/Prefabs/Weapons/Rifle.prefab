@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1458514146029220274}
   - component: {fileID: 5217462142159416897}
   - component: {fileID: 3838768490345121057}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1084091387035757923}
   - component: {fileID: 1478721030138550297}
   - component: {fileID: 6272433528701787690}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6488486369925300880}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 2999490560669824530}
   - component: {fileID: 5339290425928295206}
   - component: {fileID: 3257449830009706190}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 6068005677054181651}
   - component: {fileID: 2819204771164136600}
   - component: {fileID: 974462701551674064}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rear_Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 1177861403718399501}
   - component: {fileID: 634969515124464088}
   - component: {fileID: 4353770624291052942}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 5284110049459944879}
   - component: {fileID: 5419107117724708133}
   - component: {fileID: 5877154206099102663}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleFlashEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5345,7 +5345,7 @@ GameObject:
   - component: {fileID: 2184519589905167576}
   - component: {fileID: 1658326307051184081}
   - component: {fileID: 7851478978486582522}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
