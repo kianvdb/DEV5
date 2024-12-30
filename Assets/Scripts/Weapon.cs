@@ -135,7 +135,8 @@ SoundManager.Instance.PlayShootingSound(thisWeaponModel);
 //Instantiate the bullet
 GameObject bullet = Instantiate (bulletPrefab, bulletSpawn.position, Quaternion.identity);
 
-
+Bullet bul = bullet.GetComponent<Bullet>();
+bul.bulletDamage = WeaponDamage;
 
 // Pointing the bullet to face the shooting direction
 bullet.transform.forward = shootingDirection;
