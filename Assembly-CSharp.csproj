@@ -64,37 +64,40 @@
     <Analyzer Include="C:\Users\kianv\Downloads\VR\2022.3.21f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Zombie\ZombieAttackDamage.cs" />
     <Compile Include="Assets\Scripts\GlobalReferences.cs" />
-    <Compile Include="Assets\Scripts\ZombieStateMachine\ZombieChaseState.cs" />
+    <Compile Include="Assets\Scripts\Zombie\Zombie.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\Scripts\Interactions\InteractionEvent.cs" />
-    <Compile Include="Assets\Scripts\ZombieStateMachine\ZombieIdleState.cs" />
     <Compile Include="Assets\Scripts\Managers\WeaponManager.cs" />
+    <Compile Include="Assets\Scripts\Zombie\ZombieStateMachine\ZombiePatrollingState.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerUI.cs" />
     <Compile Include="Assets\Scripts\Managers\InputManager.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
-    <Compile Include="Assets\Scripts\ZombieStateMachine\ZombieAttackState.cs" />
+    <Compile Include="Assets\Scripts\Zombie\ZombieStateMachine\ZombieAttackState.cs" />
     <Compile Include="Assets\Scripts\Managers\InteractionManager.cs" />
     <Compile Include="Assets\Scripts\Interactions\AmmoBox.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\Scripts\Zombie\ZombieStateMachine\ZombieIdleState.cs" />
     <Compile Include="Assets\Scripts\Managers\HUDManager.cs" />
     <Compile Include="Assets\Scripts\Interactions\Interactable.cs" />
     <Compile Include="Assets\Scripts\Interactions\Keypad.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Input\PlayerInput.cs" />
-    <Compile Include="Assets\Scripts\Zombie.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunShoot.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
     <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Interactions\EventOnlyInteractable.cs" />
+    <Compile Include="Assets\Scripts\Zombie\ZombieHand.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInteract.cs" />
-    <Compile Include="Assets\Scripts\ZombieStateMachine\ZombiePatrollingState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMotor.cs" />
+    <Compile Include="Assets\Scripts\Zombie\ZombieStateMachine\ZombieChaseState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
   </ItemGroup>
   <ItemGroup>

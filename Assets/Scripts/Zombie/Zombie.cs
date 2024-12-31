@@ -42,7 +42,7 @@ else
 private void OnDrawGizmos()
 {
     Gizmos.color = Color.red;
-    Gizmos.DrawWireSphere(transform.position,1.5f); // Attacking //Stop attacking
+    Gizmos.DrawWireSphere(transform.position, 1.5f); // Attacking //Stop attacking
 
     Gizmos.color = Color.blue;
     Gizmos.DrawWireSphere(transform.position, 4f); // Detection (start chasing)

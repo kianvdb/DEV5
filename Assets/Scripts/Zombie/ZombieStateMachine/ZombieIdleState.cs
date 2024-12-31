@@ -38,6 +38,6 @@ public float detectionAreaRadius = 18f;
        }
     }
 
- 
+
    
 }
