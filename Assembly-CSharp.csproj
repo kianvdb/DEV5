@@ -81,8 +81,8 @@
     <Compile Include="Assets\Scripts\Interactions\AmmoBox.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
-    <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
     <Compile Include="Assets\Scripts\Zombie\ZombieStateMachine\ZombieIdleState.cs" />
+    <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
     <Compile Include="Assets\Scripts\Managers\HUDManager.cs" />
     <Compile Include="Assets\Scripts\Interactions\Interactable.cs" />
     <Compile Include="Assets\Scripts\Interactions\Keypad.cs" />
