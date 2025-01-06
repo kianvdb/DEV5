@@ -112,3 +112,8 @@ https://www.youtube.com/watch?v=woXLV8cIe7s&list=PLtLToKUhgzwm1rZnTeWSRAyx9tl8Vb
 
 Troubleshooting and data analytics:
 
+https://chatgpt.com/share/677b1fea-2b14-800f-8900-cd76222ea943
+https://chatgpt.com/share/67162216-98e8-800f-8116-9e3f2618b242
+https://chatgpt.com/share/677b2021-d858-800f-9ba5-1768cb5b41c5
+https://chatgpt.com/share/677b2039-4690-800f-bf09-e060b406535f
+https://chatgpt.com/share/677b206d-9b0c-800f-8b29-b53d457b60ce
